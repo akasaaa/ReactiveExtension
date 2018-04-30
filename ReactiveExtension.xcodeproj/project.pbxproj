@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D896FD312097801A008F310F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D896FD2C20978019008F310F /* RxSwift.framework */; };
+		D896FD322097801A008F310F /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D896FD2C20978019008F310F /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D896FD332097801A008F310F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D896FD2D2097801A008F310F /* RxCocoa.framework */; };
+		D896FD342097801A008F310F /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D896FD2D2097801A008F310F /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D896FD352097801A008F310F /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D896FD2E2097801A008F310F /* RxBlocking.framework */; };
+		D896FD362097801A008F310F /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D896FD2E2097801A008F310F /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8E866212097476C00E03A9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E866202097476C00E03A9B /* AppDelegate.swift */; };
 		D8E866232097476C00E03A9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E866222097476C00E03A9B /* ViewController.swift */; };
 		D8E866262097476C00E03A9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E866242097476C00E03A9B /* Main.storyboard */; };
@@ -14,7 +20,27 @@
 		D8E8662B2097476C00E03A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E866292097476C00E03A9B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D896FD372097801A008F310F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D896FD342097801A008F310F /* RxCocoa.framework in Embed Frameworks */,
+				D896FD322097801A008F310F /* RxSwift.framework in Embed Frameworks */,
+				D896FD362097801A008F310F /* RxBlocking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D896FD2B20978019008F310F /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		D896FD2C20978019008F310F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D896FD2D2097801A008F310F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		D896FD2E2097801A008F310F /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		D8E8661D2097476C00E03A9B /* ReactiveExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E866202097476C00E03A9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E866222097476C00E03A9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,16 +55,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D896FD332097801A008F310F /* RxCocoa.framework in Frameworks */,
+				D896FD312097801A008F310F /* RxSwift.framework in Frameworks */,
+				D896FD352097801A008F310F /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D896FD2A20977EFC008F310F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D896FD2E2097801A008F310F /* RxBlocking.framework */,
+				D896FD2D2097801A008F310F /* RxCocoa.framework */,
+				D896FD2C20978019008F310F /* RxSwift.framework */,
+				D896FD2B20978019008F310F /* RxTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8E866142097476C00E03A9B = {
 			isa = PBXGroup;
 			children = (
 				D8E8661F2097476C00E03A9B /* ReactiveExtension */,
+				D896FD2A20977EFC008F310F /* Frameworks */,
 				D8E8661E2097476C00E03A9B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +115,7 @@
 				D8E866192097476C00E03A9B /* Sources */,
 				D8E8661A2097476C00E03A9B /* Frameworks */,
 				D8E8661B2097476C00E03A9B /* Resources */,
+				D896FD372097801A008F310F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +317,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.Akasaaa.ReactiveExtension;
@@ -289,6 +335,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.Akasaaa.ReactiveExtension;
