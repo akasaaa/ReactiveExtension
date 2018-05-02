@@ -9,17 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let viewModel = ViewModel()
+    
+    @IBOutlet weak var operatorLabel: UILabel!
+    @IBOutlet weak var numLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func didTapNum(_ sender: UIButton) {
+        viewModel.input(num: sender.tag)
     }
-
-
+    @IBAction func didTapOperator(_ sender: UIButton) {
+        guard let op = Operator(rawValue: sender.tag) else { return }
+        viewModel.input(operator: op)
+    }
+    @IBAction func didTapEqual(_ sender: UIButton) {
+        viewModel.equal()
+    }
+    @IBAction func didTapClear(_ sender: UIButton) {
+        viewModel.clear()
+    }
 }
-
