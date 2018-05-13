@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
     
@@ -17,6 +18,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = viewModel
+            .operatorObserver
+            .asObservable()
+            .subscribe { event in
+                self.operatorLabel.text = event.element
+        }
+        
+        _ = viewModel
+            .numObserver
+            .asObservable()
+            .subscribe { event in
+                self.numLabel.text = event.element
+        }
     }
     
     @IBAction func didTapNum(_ sender: UIButton) {
