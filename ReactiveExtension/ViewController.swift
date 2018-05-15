@@ -8,29 +8,31 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxTest
+import RxBlocking
 
 class ViewController: UIViewController {
     
     let viewModel = ViewModel()
+    let disposeBag = DisposeBag()
     
     @IBOutlet weak var operatorLabel: UILabel!
     @IBOutlet weak var numLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = viewModel
-            .operatorObserver
-            .asObservable()
-            .subscribe { event in
-                self.operatorLabel.text = event.element
-        }
         
-        _ = viewModel
-            .numObserver
+        viewModel.operatorObserver
             .asObservable()
-            .subscribe { event in
-                self.numLabel.text = event.element
-        }
+            .bind(to: operatorLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.numObserver
+            .asObservable()
+            .bind(to: numLabel.rx.text)
+            .disposed(by: disposeBag)
+        
     }
     
     @IBAction func didTapNum(_ sender: UIButton) {
